@@ -2,16 +2,20 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './Foods.css'
 import FoodItem from '../FoodItem/FoodItem';
-import AllFoods from '../../Data/foods.json';
 import { useState } from 'react';
 import { useEffect } from 'react';
 const Foods = (props) => {
     const [foods, setFoods] = useState([]);
     const [selectedFoodType, setSelectedFoodType] = useState("Breakfast");
-    useEffect(() => {
-        setFoods(AllFoods);
-    } ,[])
-    const selectedFoods =  foods.filter(food => food.category == selectedFoodType)
+    useEffect(()=>{
+        fetch('http://afternoon-citadel-20309.herokuapp.com/foods')
+        .then(res =>res.json())
+        .then(data => 
+            setFoods(data) )
+
+    },[])
+    
+    const selectedFoods =  foods.filter(food => food.category === selectedFoodType)
     
     return (
         <section className="food-area my-5">
@@ -47,6 +51,7 @@ const Foods = (props) => {
                     }
 
                 </div>
+                
             </div>
         </section>
     );

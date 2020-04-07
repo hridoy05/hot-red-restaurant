@@ -9,6 +9,7 @@ import { faCartArrowDown, faCheckCircle } from '@fortawesome/free-solid-svg-icon
 const FoodDetails = (props) => {
     const {id} = useParams();
     const currentFood = allFoods.find(food=> food.id == id);
+    console.log(currentFood) ;
     const [quantity, setQuantity] = useState(1);
     const [selectedBigImg, setSelectedBigImg] = useState(currentFood.img)
     const [isSuccess, setIsSuccess] = useState(false);
@@ -28,7 +29,7 @@ const FoodDetails = (props) => {
     if(isSuccess){
         setTimeout(() => setIsSuccess(false),1500)
     }
-    console.log(isSuccess)
+    
     return (
         <div className="food-details my-5 pt-5 container">
             <div className="row">
