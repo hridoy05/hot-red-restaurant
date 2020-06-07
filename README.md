@@ -1,3 +1,17 @@
+It is an online food application where users can order their favorite food. All products information is stored in cloud side. For user authentication Firebase is used. Here online payments system is also included using stripe. All shipping information is showed when users checkout 
+-ReactJs
+-React hooks
+-Firebase
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
